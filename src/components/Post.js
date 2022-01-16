@@ -1,21 +1,19 @@
 import React, { useState } from "react";
 import { TiStarFullOutline, TiStarOutline } from "react-icons/ti";
 
-function Post() {
+function Post({ date, title, description, source }) {
 
   const [isLiked, setIsLiked] = useState(false);
   const [showFullDescription, setShowFullDescription] = useState(false);
 
-  let description = 'This is where the description will go. This is where the description will go. This is where the description will go.';
-
   //trim the string to the maximum length, retrim if in a word
-  let trimmedDescription = description.substr(0, 30);
+  let trimmedDescription = description.substr(0, 60);
   trimmedDescription = trimmedDescription.substr(0, Math.min(trimmedDescription.length, trimmedDescription.lastIndexOf(" ")))
 
   return (
     <div style={styles.postStyle}>
-      <h4 style={styles.headerStyle}>16/01/2022</h4>
-      <img style={styles.imageStyle} alt="spacex crew" src="https://images-assets.nasa.gov/image/KSC-20201115-PH-BDG01_0138/KSC-20201115-PH-BDG01_0138~medium.jpg" />
+      <h4 style={styles.headerStyle}>{date}</h4>
+      <img style={styles.imageStyle} alt="spacex crew" src={source} />
       <div onClick={() => {
         setIsLiked(prevState => { setIsLiked(!prevState) })
       }}>
@@ -23,10 +21,10 @@ function Post() {
       </div>
 
       {showFullDescription
-        ? <h4 style={styles.captionStyle}><strong>title </strong>{description}... <a style={styles.anchorStyle} onClick={() => {
+        ? <h4 style={styles.captionStyle}><strong>{title} </strong>{description}... <a style={styles.anchorStyle} onClick={() => {
           setShowFullDescription(prevState => { setShowFullDescription(!prevState) })
         }}> less</a></h4>
-        : <h4 style={styles.captionStyle}><strong>title </strong>{trimmedDescription}... <a style={styles.anchorStyle} onClick={() => {
+        : <h4 style={styles.captionStyle}><strong>{title} </strong>{trimmedDescription}... <a style={styles.anchorStyle} onClick={() => {
           setShowFullDescription(prevState => { setShowFullDescription(!prevState) })
         }}> more</a></h4>}
 
