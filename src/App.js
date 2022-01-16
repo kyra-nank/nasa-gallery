@@ -1,10 +1,11 @@
 import React from "react";
-import Post from './components/Post'
 import Collection from './components/Collection'
+import Header from "./components/Header";
 
 function App() {
   return (
     <>
+      <Header />
       <Collection />
     </>
   );

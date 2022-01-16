@@ -14,7 +14,7 @@ function Collection() {
 const styles = {
   collectionStyle: {
     display: "flex",
-    alignItems: "center",
+    alignItems: "flex-start",
     flexDirection: "row",
     width: "100%",
     flexWrap: "wrap",
