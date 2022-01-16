@@ -1,9 +1,13 @@
-import './styles.css';
+import React from "react";
+import Post from './components/Post'
+import Collection from './components/Collection'
 
 function App() {
   return (
-    <p>Hello world!</p>
+    <>
+      <Collection />
+    </>
   );
-}
+};
 
 export default App;
