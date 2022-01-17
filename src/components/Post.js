@@ -12,7 +12,7 @@ function Post({ date, title, description, source }) {
 
   return (
     <div style={styles.postStyle}>
-      <h4 style={styles.headerStyle}>{date}</h4>
+      <h4 style={styles.headerStyle}>&#169; NASA's Image API</h4>
       <img style={styles.imageStyle} alt="spacex crew" src={source} />
       <div onClick={() => {
         setIsLiked(prevState => { setIsLiked(!prevState) })
@@ -21,12 +21,14 @@ function Post({ date, title, description, source }) {
       </div>
 
       {showFullDescription
-        ? <h4 style={styles.captionStyle}><strong>{title} </strong>{description}... <a style={styles.anchorStyle} onClick={() => {
+        ? <h4 style={styles.captionStyle}><strong style={styles.boldStyle}>{title} </strong>{description}... <a style={styles.anchorStyle} onClick={() => {
           setShowFullDescription(prevState => { setShowFullDescription(!prevState) })
         }}> less</a></h4>
-        : <h4 style={styles.captionStyle}><strong>{title} </strong>{trimmedDescription}... <a style={styles.anchorStyle} onClick={() => {
+        : <h4 style={styles.captionStyle}><strong style={styles.boldStyle}>{title} </strong>{trimmedDescription}... <a style={styles.anchorStyle} onClick={() => {
           setShowFullDescription(prevState => { setShowFullDescription(!prevState) })
         }}> more</a></h4>}
+
+      <h5 style={styles.dateStyle}>{date}</h5>
 
     </div>
   );
@@ -48,6 +50,12 @@ const styles = {
     margin: "0",
     fontWeight: "normal"
   },
+  dateStyle: {
+    padding: "0 0 20px 20px",
+    margin: "0",
+    fontWeight: "normal",
+    color: "gray"
+  },
   imageStyle: {
     width: "100%",
     objectFit: "contain",
@@ -56,15 +64,19 @@ const styles = {
   },
   iconStyle: {
     padding: "10px 0 0 20px",
-    fontSize: "25px"
+    fontSize: "25px",
+    color: "#FC3D21"
   },
   captionStyle: {
     fontWeight: "normal",
+    // padding: "0 20px 0 20px",
     padding: "0 20px 0 20px",
-    margin: "10px 0 20px 0"
+    margin: "10px 0 10px 0"
   },
   anchorStyle: {
     color: "#0B3D91"
+  },
+  boldStyle: {
   }
 }
 
