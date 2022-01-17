@@ -28,8 +28,6 @@ function Post({ date, title, description, source }) {
           setShowFullDescription(prevState => { setShowFullDescription(!prevState) })
         }}> more</a></h4>}
 
-
-
     </div>
   );
 }
@@ -42,7 +40,8 @@ const styles = {
     border: "1px solid lightgray",
     margin: "15px",
     borderRadius: "8px",
-    flex: "1"
+    flex: "1",
+    fontFamily: "Source Sans Pro"
   },
   headerStyle: {
     padding: "20px 0 20px 20px",

@@ -1,12 +1,39 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Post from './Post'
+import getImages from "../api";
+import { css } from "@emotion/react";
+import RingLoader from "react-spinners/RingLoader";
 
 function Collection() {
+
+  const [imageList, setImageList] = useState([]);
+
+  useEffect(async () => {
+
+    const response = await getImages();
+    const { collection: { items } } = response;
+    setImageList(items);
+
+  }, []);
+
   return (
+
     <div style={styles.collectionStyle}>
-      <Post date="16/01/2022" title="post-one" source="https://images-assets.nasa.gov/image/KSC-20201115-PH-BDG01_0138/KSC-20201115-PH-BDG01_0138~medium.jpg" description="This is where the description will go. This is where the description will go. This is where the description will go." />
-      <Post date="17/02/2022" title="post-two" source="https://images-assets.nasa.gov/image/KSC-20201115-PH-BDG01_0138/KSC-20201115-PH-BDG01_0138~medium.jpg" description="This is where the description will go. This is where the description will go. This is where the description will go." />
-      <Post date="25/12/2022" title="post-three" source="https://images-assets.nasa.gov/image/KSC-20201115-PH-BDG01_0138/KSC-20201115-PH-BDG01_0138~medium.jpg" description="This is where the description will go. This is where the description will go. This is where the description will go." />
+
+      {imageList.length === 0
+        ? <RingLoader css={styles.spinnnerStyle} color="#FC3D21" speedMultiplier={2} loading={true} />
+        : imageList.map((image) => {
+          return (
+            <Post
+              date={image.data[0].date_created.substr(0, 10)}
+              title={image.data[0].title}
+              description={image.data[0].description}
+              source={image.links[0].href}
+            />
+          );
+        })
+      }
+
     </div>
   )
 }
@@ -19,6 +46,10 @@ const styles = {
     width: "100%",
     flexWrap: "wrap",
     justifyContent: "center"
+  },
+  spinnnerStyle: {
+    marginTop: "30%",
+    size: "50px"
   }
 }
 
