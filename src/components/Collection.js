@@ -5,7 +5,7 @@ import RingLoader from "react-spinners/RingLoader";
 
 function Collection() {
 
-  const [imageList, setImageList] = useState([]); s
+  const [imageList, setImageList] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
