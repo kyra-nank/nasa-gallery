@@ -7,7 +7,7 @@ function Post({ date, title, description, source }) {
   const [showFullDescription, setShowFullDescription] = useState(false);
 
   //trim the string to the maximum length, retrim if in a word
-  let trimmedDescription = description.substr(0, 60);
+  let trimmedDescription = description.substr(0, 50);
   trimmedDescription = trimmedDescription.substr(0, Math.min(trimmedDescription.length, trimmedDescription.lastIndexOf(" ")))
 
   return (
@@ -34,6 +34,8 @@ function Post({ date, title, description, source }) {
   );
 }
 
+// I prefer adding styles with JS for error handling & clarity
+
 const styles = {
   postStyle: {
     backgroundColor: "white",
@@ -43,12 +45,13 @@ const styles = {
     margin: "15px",
     borderRadius: "8px",
     flex: "1",
-    fontFamily: "Source Sans Pro"
+    fontFamily: "Source Sans Pro",
+    boxShadow: "1px 1px 1px 1px rgba(0, 0, 0, 0.08)"
   },
   headerStyle: {
     padding: "20px 0 20px 20px",
     margin: "0",
-    fontWeight: "normal"
+    fontWeight: "normal",
   },
   dateStyle: {
     padding: "0 0 20px 20px",
@@ -58,7 +61,8 @@ const styles = {
   },
   imageStyle: {
     width: "100%",
-    objectFit: "contain",
+    height: "300px",  // I would prefer this ommitted & apply masonry effect
+    objectFit: "cover", // I would prefer this set to "contain" to keep aspect ratio
     borderTop: "1px solid lightgray",
     borderBottom: "1px solid lightgray"
   },
@@ -69,14 +73,11 @@ const styles = {
   },
   captionStyle: {
     fontWeight: "normal",
-    // padding: "0 20px 0 20px",
     padding: "0 20px 0 20px",
     margin: "10px 0 10px 0"
   },
   anchorStyle: {
     color: "#0B3D91"
-  },
-  boldStyle: {
   }
 }
 

@@ -10,6 +10,8 @@ function Header() {
   )
 }
 
+// I prefer adding styles with JS for error handling & clarity
+
 const styles = {
   headerStyle: {
     textAlign: "center",

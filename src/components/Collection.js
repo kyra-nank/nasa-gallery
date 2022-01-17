@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Post from './Post'
 import getImages from "../api";
-import { css } from "@emotion/react";
 import RingLoader from "react-spinners/RingLoader";
 
 function Collection() {
@@ -37,6 +36,8 @@ function Collection() {
     </div>
   )
 }
+
+// I prefer adding styles with JS for error handling & clarity
 
 const styles = {
   collectionStyle: {

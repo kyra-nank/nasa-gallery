@@ -1,3 +1,6 @@
+// UNUSED FILE! I thought about adding this responsive greeting
+// but it is unnecessary for this application & would make it less elegant
+
 import React from 'react';
 
 function Greeting() {
