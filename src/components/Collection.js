@@ -13,7 +13,6 @@ function Collection() {
       const { collection: { items } } = response;
       setImageList(items);
     }
-
     fetchData();
   }, [])
 
@@ -40,7 +39,6 @@ function Collection() {
 }
 
 // I prefer adding styles with JS for error handling & clarity
-
 const styles = {
   collectionStyle: {
     display: "flex",

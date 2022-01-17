@@ -34,8 +34,8 @@ function Post({ date, title, description, source }) {
   );
 }
 
-// I prefer adding styles with JS for error handling & clarity
-
+// I prefer adding styles with JS for error handling & clarity 
+// (could have used an external sheet for this though)
 const styles = {
   postStyle: {
     backgroundColor: "white",
