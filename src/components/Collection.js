@@ -7,13 +7,23 @@ function Collection() {
 
   const [imageList, setImageList] = useState([]);
 
-  useEffect(async () => {
+  // useEffect(async () => {
 
-    const response = await getImages();
-    const { collection: { items } } = response;
-    setImageList(items);
+  //   const response = await getImages();
+  //   const { collection: { items } } = response;
+  //   setImageList(items);
 
-  }, []);
+  // }, []);
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await getImages();
+      const { collection: { items } } = response;
+      setImageList(items);
+    }
+
+    fetchData();
+  }, [])
 
   return (
 
