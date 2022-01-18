@@ -11,8 +11,11 @@ If you have any questions regarding this project, please don't hesistate to ask!
 
 ## Video explanation
 I made a series of TikTok videos documenting my thought process while developing the website.
+
 Part 1: https://www.tiktok.com/@180dayz/video/7053673963142073605?is_from_webapp=1&sender_device=pc&web_id7052194259181192710
+
 Part 2: https://www.tiktok.com/@180dayz/video/7053993129694760197?is_from_webapp=1&sender_device=pc&web_id7052194259181192710
+
 Part 3: https://www.tiktok.com/@180dayz/video/7054280545978699014?is_from_webapp=1&sender_device=pc&web_id7052194259181192710
 
 ## Front end
